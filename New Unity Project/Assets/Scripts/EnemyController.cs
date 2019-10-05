@@ -20,6 +20,12 @@ public class EnemyController : MonoBehaviour
 
     public GameObject explosion;
 
+    public bool shouldShoot;
+    public float fireRate = 0.5f;
+    private float shotCounter;
+    public GameObject bullet;
+    public Transform firePoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +44,21 @@ public class EnemyController : MonoBehaviour
             // Move towards the player. We normailze the diirection so that the max is 1 ... otherwise
             // the enemy might inadvertently move very fast
             theRB.velocity = playerDirection.normalized * moveSpeed;
+
+            // If the enemy is the type that shoots...
+            if(shouldShoot)
+            {
+                // We start the count down
+                shotCounter -= Time.deltaTime;
+                // When it hits zero...
+                if(shotCounter <= 0)
+                {
+                    // We fire a bullet...
+                    Instantiate(bullet, firePoint.position, firePoint.rotation);
+                    // and reset the timer
+                    shotCounter = fireRate;
+                }
+            }
 
         }
         else
