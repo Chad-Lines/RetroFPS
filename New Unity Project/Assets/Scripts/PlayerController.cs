@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public int currentAmmo;
 
     public Animator gunAnim;
+    public Animator anim;
 
     // Health Variables
     public int currentHealth;
@@ -34,6 +36,8 @@ public class PlayerController : MonoBehaviour
     public GameObject deadScreen;
 
     private bool hasDied;
+
+    public Text healthText, ammoText;
 
     private void Awake()
     {
@@ -45,6 +49,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        healthText.text = currentHealth.ToString() + "%";
+        ammoText.text = currentAmmo.ToString();
     }
 
     // Update is called once per frame
@@ -81,6 +87,9 @@ public class PlayerController : MonoBehaviour
                     Ray ray = viewCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
                     RaycastHit hit;
                     
+                    // Play gun sound
+                    AudioController.instance.PlayGunShot();
+                    
                     // This IF statement detects if the ray has collided with anything
                     if(Physics.Raycast(ray, out hit))
                     {
@@ -95,6 +104,8 @@ public class PlayerController : MonoBehaviour
                         {
                             hit.transform.parent.GetComponent<EnemyController>().takeDamage();
                         }
+
+                        
                     } 
                     else
                     {
@@ -103,7 +114,19 @@ public class PlayerController : MonoBehaviour
 
                     currentAmmo--;
                     gunAnim.SetTrigger("Shoot");
+                    UpdateAmmoUI();
                 }
+            }
+
+            // This helps to dermine whether the moving animation
+            // should be run or not.
+            if(moveInput != Vector2.zero)
+            {
+                anim.SetBool("isMoving", true);
+            }
+            else
+            {
+                anim.SetBool("isMoving", false);
             }
         }
     }
@@ -117,7 +140,12 @@ public class PlayerController : MonoBehaviour
         {
             deadScreen.SetActive(true);
             hasDied = true;
+            currentHealth = 0;
         }
+
+        healthText.text = currentHealth.ToString() + "%";
+
+        AudioController.instance.PlayPlayerHurt();
     }
 
     public void AddHealth(int healAmount)
@@ -128,5 +156,12 @@ public class PlayerController : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+
+        healthText.text = currentHealth.ToString() + "%";
+    }
+
+    public void UpdateAmmoUI()
+    {
+        ammoText.text = currentAmmo.ToString();
     }
 }

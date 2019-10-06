@@ -60,8 +60,7 @@ public class EnemyController : MonoBehaviour
                 }
             }
 
-        }
-        else
+        } else
         {
             theRB.velocity = Vector2.zero;
         }
@@ -77,6 +76,10 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
+            AudioController.instance.PlayEnemyDeath();
+        } else
+        {
+            AudioController.instance.PlayEnemyDeath();
         }
     }
 }

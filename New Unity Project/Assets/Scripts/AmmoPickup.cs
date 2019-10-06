@@ -29,6 +29,12 @@ public class AmmoPickup : MonoBehaviour
             // Add the ammount ammount to the player's ammo count
             PlayerController.instance.currentAmmo += ammoAmount;
 
+            // Update the UI to show the new ammo amount
+            PlayerController.instance.UpdateAmmoUI();
+
+            // Play the associated sound
+            AudioController.instance.PlayAmmoPickup();
+
             // Destroy the ammo container 
             Destroy(gameObject);
         }
