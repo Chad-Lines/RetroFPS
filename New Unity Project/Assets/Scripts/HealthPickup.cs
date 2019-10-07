@@ -5,6 +5,9 @@ using UnityEngine;
 public class HealthPickup : MonoBehaviour
 {
 
+    public GameObject p;
+    public PlayerController pscript;
+
     public int healthAmount = 25;
 
     // Start is called before the first frame update
@@ -32,7 +35,7 @@ public class HealthPickup : MonoBehaviour
             AudioController.instance.PlayHealthPickup();
 
             // Destroy the ammo container 
-            Destroy(gameObject);            
+            Destroy(gameObject);
         }
 
     }
