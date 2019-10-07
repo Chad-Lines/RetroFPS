@@ -19,7 +19,6 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed;
 
     public GameObject explosion;
-
     public bool shouldShoot;
     public float fireRate = 0.5f;
     private float shotCounter;

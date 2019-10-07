@@ -6,11 +6,8 @@ public class EnemyBullet : MonoBehaviour
 {
 
     public int damageAmount;
-
     public float bulletSpeed = 3f;
-
     public Rigidbody2D theRB;
-
     private Vector3 direction;
 
     // Start is called before the first frame update
@@ -30,6 +27,7 @@ public class EnemyBullet : MonoBehaviour
         theRB.velocity = direction * bulletSpeed;
     }
 
+    // If the bullet hits the player, the player takes damage
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
@@ -38,5 +36,17 @@ public class EnemyBullet : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.name == "Wall(Clone)" || col.gameObject.name == "Collider" )
+        {
+            Destroy(gameObject);
+        }else
+        {
+            Debug.Log("collision name = " + col.gameObject.name);
+        }
+        
     }
 }
