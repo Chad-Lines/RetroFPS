@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 494}
   m_MaxSize: {x: 18008, y: 14044}
   vertical: 0
-  controlID: 5868
+  controlID: 6980
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 5869
+  controlID: 6935
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,8 +151,8 @@ MonoBehaviour:
     y: 0
     width: 331
     height: 452
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 222}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -232,8 +232,8 @@ MonoBehaviour:
     y: 452
     width: 331
     height: 388
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 232, y: 272}
+  m_MaxSize: {x: 10002, y: 10022}
   m_ActualView: {fileID: 7}
   m_Panes:
   - {fileID: 7}
@@ -279,19 +279,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/chadlines/src/RetroFPS/New Unity Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: da2d0000
-    m_LastClickedID: 11738
+    m_SelectedIDs: a62f0000
+    m_LastClickedID: 12198
     m_ExpandedIDs: 000000008a2d0000f62e0000c833000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -345,8 +345,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 48fbffff
-    m_LastClickedInstanceID: -1208
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300003a330000ec320000c22e000000000000
     m_RenameOverlay:
@@ -364,7 +364,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 6}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -431,7 +431,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 422}
   m_MaxSize: {x: 4004, y: 8022}
   vertical: 1
-  controlID: 5848
+  controlID: 6849
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -451,8 +451,8 @@ MonoBehaviour:
     y: 0
     width: 986
     height: 515
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 222}
+  m_MaxSize: {x: 4004, y: 4022}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -495,9 +495,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1084.6492, y: 523.2613, z: -260.25}
+    m_Target: {x: 1200.4497, y: 613.82355, z: -350.5}
     speed: 2
-    m_Value: {x: 1084.6492, y: 523.2613, z: -260.25}
+    m_Value: {x: 1200.4497, y: 613.82355, z: -350.5}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -530,9 +530,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1222.637
+    m_Target: 1716.0613
     speed: 2
-    m_Value: 1222.637
+    m_Value: 1716.0613
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -667,7 +667,7 @@ MonoBehaviour:
   - {fileID: 15}
   - {fileID: 16}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1208
+  m_LastSelectedObjectID: 13110
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1119,5 +1119,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: -1208
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
