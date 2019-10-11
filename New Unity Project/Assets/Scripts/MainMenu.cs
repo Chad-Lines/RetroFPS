@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    public string firstLevel;
+    public string firstLevel;           // Level to open on "Start" button
+    public GameObject optionsScreen;    // The "Options" screen
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +30,12 @@ public class MainMenu : MonoBehaviour
 
     public void OpenOptions()
     {
-
+        optionsScreen.SetActive(true);
     }
 
     public void CloseOptions()
     {
-
+        optionsScreen.SetActive(false);
     }
 
     public void QuitGame()

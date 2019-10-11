@@ -19,6 +19,7 @@ ScriptsOnlyBuild:
     - GameManager
     - HealthPickup
     - MainMenu
+    - OptionsMenu
     - PlayerController
     - ReloadScene
     - UnityEngine.RuleTile
@@ -49,7 +50,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Outline
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/Main Menu.unity:
@@ -78,20 +81,28 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10296}
     - Class: 114
-      Script: {instanceID: 10684}
+      Script: {instanceID: 10450}
     - Class: 114
-      Script: {instanceID: 10776}
+      Script: {instanceID: 10686}
     - Class: 114
-      Script: {instanceID: 11172}
+      Script: {instanceID: 10778}
     - Class: 114
-      Script: {instanceID: 11550}
+      Script: {instanceID: 11174}
     - Class: 114
-      Script: {instanceID: 15642}
+      Script: {instanceID: 11552}
+    - Class: 114
+      Script: {instanceID: 11568}
+    - Class: 114
+      Script: {instanceID: 11588}
+    - Class: 114
+      Script: {instanceID: 13784}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -176,27 +187,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10402}
     - Class: 114
-      Script: {instanceID: 10482}
+      Script: {instanceID: 10484}
     - Class: 114
-      Script: {instanceID: 10530}
+      Script: {instanceID: 10532}
     - Class: 114
-      Script: {instanceID: 10642}
+      Script: {instanceID: 10644}
     - Class: 114
-      Script: {instanceID: 10684}
+      Script: {instanceID: 10686}
     - Class: 114
-      Script: {instanceID: 10788}
+      Script: {instanceID: 10790}
     - Class: 114
-      Script: {instanceID: 10864}
+      Script: {instanceID: 10866}
     - Class: 114
-      Script: {instanceID: 11172}
-    - Class: 114
-      Script: {instanceID: 11492}
+      Script: {instanceID: 11174}
     - Class: 114
       Script: {instanceID: 11494}
     - Class: 114
-      Script: {instanceID: 11550}
+      Script: {instanceID: 11496}
     - Class: 114
-      Script: {instanceID: 11578}
+      Script: {instanceID: 11552}
+    - Class: 114
+      Script: {instanceID: 11580}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -450,6 +461,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
+  - hash:
+      serializedVersion: 2
+      Hash: 0413f491c470ff80626859595254aeb4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -770,10 +787,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 2318369e14b79e4855f7dd7ddb83fa9c
+      Hash: 0fd37156670f956aa2cdfbaad08986a0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: MainMenu
+    className: OptionsMenu
   platform: 2
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
