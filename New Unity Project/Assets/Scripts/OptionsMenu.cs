@@ -7,6 +7,12 @@ public class OptionsMenu : MonoBehaviour
 {
     public Toggle fullscreenTog, vsyncTog;
 
+    public ResItem[] resolutions;
+
+    public int selectedResolution;
+
+    public Text resolutionLabel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +25,36 @@ public class OptionsMenu : MonoBehaviour
         
     }
 
+    public void ResLeft()
+    {
+        selectedResolution--;
+        if(selectedResolution < 0)
+        {
+            selectedResolution = 0;
+        }
+
+        UpdateResLabel();
+
+    }
+
+    public void ResRight()
+    {
+        selectedResolution++;
+        if(selectedResolution > resolutions.Length - 1)
+        {
+           selectedResolution = resolutions.Length - 1;
+        }
+
+        UpdateResLabel();
+    }
+
+    public void UpdateResLabel()
+    {
+        resolutionLabel.text = resolutions[selectedResolution].horizontal.ToString() + " x " + resolutions[selectedResolution].vertical.ToString();
+    }
+
     public void ApplyGraphics()
     {
-        // Apply Fullscreen
-        Screen.fullScreen = fullscreenTog.isOn;
 
         // Apply vSync
         if(vsyncTog.isOn)
@@ -32,5 +64,15 @@ public class OptionsMenu : MonoBehaviour
         {
             QualitySettings.vSyncCount = 0;
         }
+
+        // Apply resolution and set full screen on or off
+        Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, fullscreenTog.isOn);
     }
+}
+
+[System.Serializable] // This allow us to display this class back in the Unity editor
+public class ResItem
+{
+    // This class will be used to set the in-game resolution
+    public int horizontal, vertical;
 }
