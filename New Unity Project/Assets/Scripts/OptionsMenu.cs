@@ -16,7 +16,34 @@ public class OptionsMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Here we set the initial values so that graphics settings persist
+        fullscreenTog.isOn = Screen.fullScreen; // Setting the Fullscreen toggle button
+
+        if(QualitySettings.vSyncCount == 0)     // Setting the vsync toggle button
+        {
+            vsyncTog.isOn = false;
+        } else
+        {
+            vsyncTog.isOn = true;
+        }
+
+        bool foundRes = false;
+        for(int i = 0; i < resolutions.Length; i++)   // Setting the resolution via a search in the array
+        {
+            // Search each resolution in the array to see if it matches the current resolution
+            if(Screen.width == resolutions[i].horizontal && Screen.height == resolutions[i].vertical)
+            {
+                foundRes = true;        // Indicate that we've located the correct resolution
+                selectedResolution = i; // Set the "selectedResolution" to the current value in the array
+                UpdateResLabel();       // Update the label to reflect the correct resolution
+            }
+        }
+
+        if(!foundRes) // If the resolution is not in the list... (i.e. user has a custom resolution)
+        {
+            resolutionLabel.text = Screen.width.ToString() + " x " + Screen.height.ToString(); // Set the label accordingly
+        }
+
     }
 
     // Update is called once per frame
