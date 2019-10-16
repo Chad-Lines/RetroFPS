@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// NEW IMPORTS ---
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class OptionsMenu : MonoBehaviour
 {
-    public Toggle fullscreenTog, vsyncTog;
-
-    public ResItem[] resolutions;
-
-    public int selectedResolution;
-
-    public Text resolutionLabel;
+    // VARIABLES ---
+    public Toggle fullscreenTog, vsyncTog;  // Get the toggle buttons for fullscreen and vsync
+    public ResItem[] resolutions;           // A list of resolutions that we can define in the editor
+    public int selectedResolution;          // The resolution that is currenly in place
+    public Text resolutionLabel;            // The label for the resolution
+    
+    public AudioMixer theMixer;                         // The Audio Mixer to use
+    public Slider mastSlider, musicSlider, sfxSlider;   // Sliders for volume
+    public Text mastLabel, musicLabel, sfxLabel;        // Slider labels
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +98,24 @@ public class OptionsMenu : MonoBehaviour
 
         // Apply resolution and set full screen on or off
         Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, fullscreenTog.isOn);
+    }
+
+    public void SetMasterVolume()
+    {
+        mastLabel.text = (mastSlider.value + 80).ToString();    // Display the correct label
+        theMixer.SetFloat("MasterVol", mastSlider.value);        // Change the volume        
+    }
+
+    public void SetMusicVolume()
+    {
+        musicLabel.text = (musicSlider.value + 80).ToString();  // Display the correct label
+        theMixer.SetFloat("MusicVol", musicSlider.value);        // Change the volume     
+    }
+
+    public void SetSFXVolume()
+    {
+        sfxLabel.text = (sfxSlider.value + 80).ToString();      // Display the correct label
+        theMixer.SetFloat("SFXVol", sfxSlider.value);            // Change the volume     
     }
 }
 
